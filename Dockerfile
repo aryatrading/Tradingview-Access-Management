@@ -17,4 +17,4 @@ COPY . /app
 EXPOSE 8000
 
 # Define the command to run the application
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "main:app"]
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "server:app"]
