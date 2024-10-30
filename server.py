@@ -44,9 +44,10 @@ def access(username):
     return json.dumps(accessList), 200, {'Content-Type': 'application/json; charset=utf-8'}
         
   except Exception as e:
+    import traceback
     print("[X] Exception Occured : ", e)
     failureResponse = {
-      'errorMessage':'Unknown Exception Occurred'
+        'errorMessage': traceback.format_exc()
     }
     return json.dumps(failureResponse), 500, {'Content-Type': 'application/json; charset=utf-8'}
 
