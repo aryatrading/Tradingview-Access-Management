@@ -1,5 +1,4 @@
 import os
-from replit import db
 import config
 import requests
 import platform
@@ -7,6 +6,7 @@ from urllib3 import encode_multipart_formdata
 from datetime import datetime, timezone
 import helper
 
+db: dict = {}
 
 class tradingview:
 
