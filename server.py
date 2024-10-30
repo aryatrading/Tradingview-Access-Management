@@ -13,7 +13,7 @@ def validate(username):
   except Exception as e:
     print("[X] Exception Occured : ", e)
     failureResponse = {
-      'errorMessage':'Unknown Exception Occurred'
+        'errorMessage': e.__str__
     }
     return json.dumps(failureResponse), 500, {'Content-Type': 'application/json; charset=utf-8'}
 
