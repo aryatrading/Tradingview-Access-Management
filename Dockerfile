@@ -1,8 +1,14 @@
 # Use an official Python runtime as a parent image
 FROM python:3.8-slim
-
+# Declare build-time arguments
+ARG tvusername
+ARG tvpassword
 # Set the working directory in the container
 WORKDIR /app
+# Set environment variables using the build-time arguments
+ENV tvusername=${tvusername} \
+    tvpassword=${tvpassword}
+
 RUN apt-get update && apt-get install -y curl wget && rm -rf /var/lib/apt/lists/*
 
 # Copy the project files to the container

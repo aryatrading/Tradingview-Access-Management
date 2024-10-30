@@ -27,3 +27,4 @@ urllib3==1.26.11 ; python_version >= "3.8" and python_version < "3.9"
 werkzeug==2.2.1 ; python_version >= "3.8" and python_version < "3.9"
 yarl==1.8.1 ; python_version >= "3.8" and python_version < "3.9"
 zipp==3.8.1 ; python_version >= "3.8" and python_version < "3.9"
+tinydb==4.8.2
