@@ -4,15 +4,11 @@ FROM python:3.8-slim
 # Set the working directory in the container
 WORKDIR /app
 
-# Install Poetry
-RUN pip install poetry
-
 # Copy the project files to the container
-COPY pyproject.toml poetry.lock /app/
+COPY requirements.txt /app/
 
 # Install dependencies
-RUN poetry config virtualenvs.create false && poetry install --no-dev
-
+RUN pip3 install --no-cache-dir -r /app/requirements.txt
 # Copy the rest of the application files
 COPY . /app
 
@@ -20,4 +16,4 @@ COPY . /app
 EXPOSE 8000
 
 # Define the command to run the application
-CMD ["poetry", "run", "gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "main:app"]
+CMD ["python", "main.py"]
